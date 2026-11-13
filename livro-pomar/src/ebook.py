@@ -109,7 +109,14 @@ def pack():
         im.save(os.path.join(imgdir, name), 'JPEG', quality=88, optimize=True)
         jpgs.append(name)
     # capa separada para o campo "Capa do e-book" do KDP
-    Image.open(os.path.join(imgdir, 'cover.jpg')).save(os.path.join(BUILD, 'capa-kindle.jpg'), quality=92)
+    # KDP prefere capa 1600 x 2560 (proporcao 1,6): completa com ceu em cima e grama embaixo
+    im = Image.open(os.path.join(imgdir, 'cover.jpg')).convert('RGB')
+    top, bot = im.getpixel((40, 6)), im.getpixel((40, H - 7))
+    pad = (2560 - H) // 2
+    capa = Image.new('RGB', (W, 2560), top)
+    capa.paste(Image.new('RGB', (W, 2560 - pad - H), bot), (0, pad + H))
+    capa.paste(im, (0, pad))
+    capa.save(os.path.join(BUILD, 'capa-kindle.jpg'), 'JPEG', quality=90, dpi=(300, 300))
 
     book_id = 'urn:uuid:' + str(uuid.uuid5(uuid.NAMESPACE_URL, TITULO))
     out = os.path.join(BUILD, 'ebook-kindle.epub')
