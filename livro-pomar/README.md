@@ -1,4 +1,6 @@
-# O Pomar do Pé de Laranja: livro de colorir para o Amazon KDP
+# A Turma do Pomar da Serra Dourada: Kindle + livro de colorir (Amazon KDP)
+
+**Para publicar, abra o arquivo `PASSO A PASSO - PUBLICAR NA AMAZON.txt`.**
 
 Livro de colorir infantojuvenil com 30 páginas, personagens originais (frutas brasileiras) e 4 capítulos inspirados no folclore.
 
@@ -8,6 +10,8 @@ Livro de colorir infantojuvenil com 30 páginas, personagens originais (frutas b
 |---|---|
 | `build/interior.pdf` | Miolo: 30 páginas, 8,5" × 11", preto e branco, sem sangria |
 | `build/capa.pdf` | Capa completa (contracapa + lombada + frente), 17,318" × 11,25", com sangria de 0,125" |
+| `build/ebook-kindle.epub` | E-book Kindle colorido, layout fixo, 21 páginas (validado com EPUBCheck) |
+| `build/capa-kindle.jpg` | Capa do e-book (1600 × 2071) |
 
 ## Estrutura do miolo
 
@@ -31,6 +35,7 @@ Nenhum desenho fica no verso de outro desenho, então a tinta da canetinha não 
    cd src
    python3 book.py   # gera build/interior.html e build/capa.html
    node render.js    # gera os PDFs (precisa do Playwright + Chromium)
+   python3 ebook.py html && node render_ebook.js && python3 ebook.py pack   # e-book Kindle
    ```
 2. Se mudar o número de páginas, a lombada da capa é recalculada sozinha.
 

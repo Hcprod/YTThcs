@@ -1,0 +1,147 @@
+================================================================
+ PASSO A PASSO PARA PUBLICAR NA AMAZON
+ Livro: A Turma do Pomar da Serra Dourada
+================================================================
+
+Você vai precisar de uns 30 minutos. É só seguir na ordem e copiar e
+colar os textos que estão aqui.
+
+Arquivos que você vai usar (estão na pasta "build"):
+  - ebook-kindle.epub ......... o livro do Kindle (colorido)
+  - capa-kindle.jpg ........... a capa do livro do Kindle
+  - interior.pdf .............. o miolo do livro impresso (para colorir)
+  - capa.pdf .................. a capa do livro impresso
+
+
+----------------------------------------------------------------
+PARTE 1: CRIAR SUA CONTA (só na primeira vez)
+----------------------------------------------------------------
+1. Entre em  kdp.amazon.com  e clique em "Inscrever-se".
+   Pode usar a mesma conta que você usa para comprar na Amazon.
+2. Clique em "Sua conta" e preencha:
+   - seus dados pessoais e o CPF
+   - o banco onde você quer receber o dinheiro
+   - a "Entrevista fiscal" (é um questionário: responda que você é
+     pessoa física e que mora no Brasil)
+   Sem isso a Amazon não deixa você receber as vendas.
+
+
+----------------------------------------------------------------
+PARTE 2: LIVRO DO KINDLE (é o que vende no Brasil)
+----------------------------------------------------------------
+Clique em "+ Criar" e escolha "eBook Kindle".
+
+>>> Tela 1: Detalhes
+
+Idioma:             Português
+Título do livro:    A Turma do Pomar da Serra Dourada
+Subtítulo:          Aventuras do folclore brasileiro
+Autor:              Turma do Pomar
+                    (no campo do nome, escreva "Turma do Pomar" e deixe
+                    o sobrenome vazio, ou escreva "Turma" + "do Pomar")
+
+Descrição (copie e cole tudo):
+Lá no alto da Serra Dourada existe um pomar onde as frutas falam,
+brincam e vivem grandes aventuras!
+
+Conheça a Pitanga tagarela, o Caju explorador, a Jabuticaba
+observadora, a sábia Vovó Jaca, a Dona Manga cozinheira, o Professor
+Pinhão inventor e a rabugenta (mas engraçada) Carambola.
+
+Neste livro ilustrado e colorido, a turma corre atrás de um redemoinho
+brincalhão, ouve a canção da guardiã do riacho, segue pegadas
+misteriosas que apontam para trás e escapa da poção mais trapalhona
+que já saiu de um caldeirão.
+
+São 4 capítulos curtos, inspirados nas lendas do Saci, da Iara e do
+Curupira, recontadas de um jeito leve e divertido para crianças de 4
+a 8 anos. Perfeito para ler junto na hora de dormir!
+
+Direitos de publicação:  "Eu possuo os direitos autorais..."
+Conteúdo adulto:         Não
+Faixa etária:            mínimo 4 anos, máximo 8 anos
+
+Categorias (clique em "Escolher categorias"):
+  - Infantil > Contos de Fadas, Lendas e Mitologia
+  - Infantil > Livros ilustrados (ou "Livros de Imagem")
+  - Infantil > Humor
+  (se o nome estiver um pouco diferente, escolha o mais parecido)
+
+Palavras-chave (uma em cada caixinha):
+  1. livro infantil folclore brasileiro
+  2. saci iara curupira para crianças
+  3. histórias para dormir infantil
+  4. livro ilustrado infantil colorido
+  5. aventura infantil frutas
+  6. histórias curtas para crianças 4 a 8 anos
+  7. livro infantil lendas brasileiras
+
+Clique em "Salvar e continuar".
+
+>>> Tela 2: Conteúdo
+
+DRM:                  Sim
+Manuscrito:           enviar o arquivo  ebook-kindle.epub
+Capa:                 "Enviar uma capa que você já tem" > capa-kindle.jpg
+Conteúdo gerado por IA:  responda SIM
+  - Texto:   "Gerado por IA" (ferramenta: Claude)
+  - Imagens: "Gerado por IA" (ferramenta: Claude)
+  (A Amazon exige essa resposta. Mentir pode bloquear sua conta.)
+ISBN:                 deixe em branco (o Kindle não precisa)
+
+Clique em "Abrir o Visualizador" e confira se todas as páginas
+aparecem. Depois clique em "Salvar e continuar".
+
+>>> Tela 3: Preço
+
+KDP Select:           pode marcar (o livro entra no Kindle Unlimited e
+                      você ganha também por página lida)
+Territórios:          Todos os territórios
+Royalty:              70%
+Preço em amazon.com.br:   R$ 12,90
+  (deixe a Amazon calcular os preços dos outros países sozinha)
+
+Clique em "Publicar seu eBook Kindle". Em até 72 horas ele aparece à
+venda.
+
+
+----------------------------------------------------------------
+PARTE 3: LIVRO IMPRESSO PARA COLORIR (opcional)
+----------------------------------------------------------------
+Atenção: a Amazon do Brasil NÃO vende livro impresso pelo KDP. Esta
+versão é vendida nas Amazon dos EUA e da Europa (bom para brasileiros
+que moram fora). Se não quiser, pode pular esta parte.
+
+Na página do livro, clique em "+ Criar livro de capa comum". Os
+dados da Tela 1 já vêm preenchidos. Troque só:
+  Subtítulo:   Aventuras para colorir
+  Na descrição, troque "livro ilustrado e colorido" por
+  "livro de colorir" e acrescente no final:
+  "Desenhos com traço grosso, impressos de um lado só."
+  Palavra-chave extra: livro de colorir infantil
+
+Tela 2:
+  ISBN:              "Obter um ISBN gratuito do KDP"
+  Tinta e papel:     Tinta preta e papel branco
+  Tamanho:           8,5 x 11 pol. (21,59 x 27,94 cm)
+  Sangria:           Sem sangria
+  Acabamento:        Fosco
+  Manuscrito:        interior.pdf
+  Capa:              "Enviar um arquivo de capa" > capa.pdf
+  Conteúdo gerado por IA: SIM (igual ao do Kindle)
+  Clique em "Iniciar visualizador" e depois em "Aprovar".
+
+Tela 3:
+  Preço em amazon.com:  US$ 7,99
+  (a Amazon mostra na tela quanto você ganha por venda)
+
+Clique em "Publicar seu livro de capa comum".
+
+
+----------------------------------------------------------------
+DEPOIS DE PUBLICADO
+----------------------------------------------------------------
+- Para acompanhar as vendas: kdp.amazon.com > "Relatórios".
+- A Amazon paga uns 60 dias depois do fim de cada mês de vendas.
+- Para divulgar: compartilhe o link do livro no WhatsApp, Instagram e
+  em grupos de mães, pais e professores.

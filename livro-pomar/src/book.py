@@ -4,7 +4,7 @@ Uso:  python3 book.py   -> gera build/interior.html e build/capa.html
       node render.js    -> gera build/*.pdf
 """
 import os
-from config import TITULO, SUBTITULO, AUTOR, ANO, PAPEL_ESPESSURA
+from config import TITULO, TITULO_LINHAS, SUBTITULO, AUTOR, ANO, PAPEL_ESPESSURA
 from scenes import (AW, AH, scene_gallery, scene_ch1, scene_ch2, scene_ch3, scene_ch4,
                     scene_final, bubble_text, clip_art, star, cloud, sun, ground, flower_at,
                     butterfly, spoon, pot, frog, fish, footprint, bubble)
@@ -37,7 +37,7 @@ CAPITULOS = [
             '— Ei! Suco de QUÊ?! — reclamou Pitanga.',
         ],
         'cena': scene_ch1,
-        'spot': lambda: manga(150, 120, 0.4, 'line', 'surprised', 4.5, spoon=False) + spoon(330, 70, 0.7, 'line', rot=-30) + pot(470, 110, 0.7, 'line', rot=15),
+        'spot': lambda m='line': manga(150, 120, 0.4, m, 'surprised', 4.5, spoon=False) + spoon(330, 70, 0.7, m, rot=-30) + pot(470, 110, 0.7, m, rot=15),
     },
     {
         'n': 2, 'titulo': 'A Guardiã das Águas Claras',
@@ -49,7 +49,7 @@ CAPITULOS = [
             '— Pim! — fez a máquina. E todo mundo caiu na risada.',
         ],
         'cena': scene_ch2,
-        'spot': lambda: frog(170, 140, 0.9, 'line') + fish(420, 120, 0.9, 'line', rot=-15),
+        'spot': lambda m='line': frog(170, 140, 0.9, m) + fish(420, 120, 0.9, m, rot=-15),
     },
     {
         'n': 3, 'titulo': 'A Pegada Invertida na Trilha',
@@ -61,7 +61,7 @@ CAPITULOS = [
             'Caju prometeu colher só o necessário. E, desde então, o Guardião ensina a turma os caminhos secretos da floresta.',
         ],
         'cena': scene_ch3,
-        'spot': lambda: ''.join(footprint(120 + i * 90, 110 + (16 if i % 2 else -16), 1.3, 0, 'line') for i in range(5)),
+        'spot': lambda m='line': ''.join(footprint(120 + i * 90, 110 + (16 if i % 2 else -16), 1.3, 0, m) for i in range(5)),
     },
     {
         'n': 4, 'titulo': 'O Feitiço Trapalhão da Caverna',
@@ -73,7 +73,7 @@ CAPITULOS = [
             '— Hunf… — resmungou ela, de boca cheia. — Até que ficou gostoso.',
         ],
         'cena': scene_ch4,
-        'spot': lambda: carambola(200, 110, 0.38, 'line', 'grumpy', 4.5) + bubble(380, 80, 30) + bubble(450, 140, 20) + bubble(500, 60, 24),
+        'spot': lambda m='line': carambola(200, 110, 0.38, m, 'grumpy', 4.5) + bubble(380, 80, 30, m) + bubble(450, 140, 20, m) + bubble(500, 60, 24, m),
     },
 ]
 
@@ -128,10 +128,8 @@ def p_titulo():
     a.append(hills(-20, 720, 880, 'line', 5))
     a.append(sun(590, 110, 46, 'line', 5))
     a.append(cloud(120, 110, 0.8))
-    words = TITULO.split(' ')
-    mid = len(words) // 2
-    a.append(bubble_text(350, 300, ' '.join(words[:mid]), 66))
-    a.append(bubble_text(350, 380, ' '.join(words[mid:]), 66))
+    a.append(bubble_text(350, 300, TITULO_LINHAS[0], 62))
+    a.append(bubble_text(350, 380, TITULO_LINHAS[1], 62))
     a.append(f'<text x="350" y="440" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="26">{SUBTITULO}</text>')
     a.append(pitanga(200, 650, 0.62, 'line', 'joy', 5.5, pose='wave'))
     a.append(caju(500, 650, 0.62, 'line', 'happy', 5.5, pose='point', flip=True))
@@ -142,7 +140,7 @@ def p_titulo():
 def p_creditos():
     return page('verso', f'''<div class="center small" style="justify-content:flex-end;padding-bottom:0.4in">
 <p><b>{TITULO}</b><br>{SUBTITULO}</p>
-<p>Texto e ilustrações: {AUTOR}<br>© {ANO} {AUTOR}. Todos os direitos reservados.</p>
+<p>Criação: {AUTOR}<br>© {ANO} {AUTOR}. Todos os direitos reservados.</p>
 <p>Nenhuma parte deste livro pode ser reproduzida sem autorização,<br>exceto as páginas de colorir, para uso pessoal.</p>
 <p>Esta é uma obra original. Os personagens, o Pomar da Serra Dourada e as histórias<br>foram criados para este livro. As lendas do folclore brasileiro que inspiraram<br>alguns capítulos (Saci, Iara e Curupira) são de domínio público e foram recontadas livremente.</p>
 <p>Fontes tipográficas: Fredoka e Nunito (SIL Open Font License).</p>
@@ -289,15 +287,12 @@ def cover(n_pages):
     fr.append(hills(-60, 900, 760, m, 5))
     fr.append(sun(700, 150, 60, m, 5))
     fr.append(cloud(160, 170, 0.9, m, 5))
-    fr.append(cloud(560, 330, 0.6, m, 5))
     g = G(m, 5)
     g.path('M -60 700 Q 200 660 420 690 Q 650 720 900 680 L 900 1200 L -60 1200 Z', 'grass')
     fr.append(g.svg())
     fr.append(tree(150, 760, 0.95, m, 5))
-    words = TITULO.split(' ')
-    mid = len(words) // 2
-    fr.append(bubble_text(408, 300, ' '.join(words[:mid]), 84, m, 'orange', 9))
-    fr.append(bubble_text(408, 400, ' '.join(words[mid:]), 84, m, 'orange', 9))
+    fr.append(bubble_text(408, 300, TITULO_LINHAS[0], 80, m, 'orange', 9))
+    fr.append(bubble_text(408, 400, TITULO_LINHAS[1], 80, m, 'orange', 9))
     fr.append(f'<rect x="98" y="430" width="620" height="54" rx="27" fill="#fff" stroke="#000" stroke-width="5"/>'
               f'<text x="408" y="466" text-anchor="middle" font-family="Fredoka" font-weight="600" font-size="27">{SUBTITULO}</text>')
     fr.append(jaca(560, 760, 0.62, m, 'wise', 5.5))

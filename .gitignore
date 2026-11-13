@@ -1,3 +1,4 @@
 livro-pomar/build/*.html
 __pycache__/
 *.zip
+livro-pomar/build/ebook_img/
